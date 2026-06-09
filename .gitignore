@@ -1,3 +1,6 @@
+# Results PDF is tracked (small, <200KB)
+# results_pipeline_RelB.pdf  ← intentionally NOT ignored
+
 # Large binary outputs — use DVC or download via run_pipeline.py
 data/processed/features_X.npy
 data/processed/features_y.npy

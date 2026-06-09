@@ -3,6 +3,81 @@
 
 > **TARVIA Lab** · Omar Lujano Olazaba, PhD · June 2026
 
+📄 **Formal results report:** [`results_pipeline_RelB.pdf`](results_pipeline_RelB.pdf)
+
+---
+
+## Pipeline Results
+
+> Full results from the June 2026 run on the 352-gene RelB signature. Raw data in [`data/processed/screening_hits.csv`](data/processed/screening_hits.csv) and [`data/processed/target_manifest.csv`](data/processed/target_manifest.csv).
+
+### Druggable RelB targets identified (26 of 352 genes)
+
+| Gene | ChEMBL ID | Priority | RelB logFC | Known Ligands |
+|------|-----------|----------|-----------|--------------|
+| KLKB1 | CHEMBL2000 | medium | -1.75 | 3,592 |
+| CYP19A1 (aromatase) | CHEMBL1978 | medium | -2.44 | 2,991 |
+| MMP13 | CHEMBL280 | **high** | -2.60 | 2,829 |
+| PRL | CHEMBL2014 | medium | -2.67 | 2,612 |
+| GNAL | CHEMBL4026 | medium | -1.50 | 1,163 |
+| ABCG2 | CHEMBL5393 | **high** | -2.37 | 1,045 |
+| AKR1C3 | CHEMBL4681 | medium | -1.78 | 1,009 |
+| TRAC | CHEMBL1825 | **high** | -2.14 | 905 |
+| PPARA | CHEMBL239 | medium | -1.52 | 889 |
+| CYP17A1 | CHEMBL3522 | medium | -3.21 | 729 |
+| MMP12 | CHEMBL4393 | **high** | -3.12 | 712 |
+| HSD17B2 | CHEMBL2789 | medium | -1.58 | 671 |
+| ALB | CHEMBL2083 | **high** | -4.79 | 603 |
+| CYP1A1 | CHEMBL2231 | **high** | -2.40 | 569 |
+| ANPEP | CHEMBL1907 | **high** | -3.29 | 446 |
+| PLA2G7 | CHEMBL3514 | medium | -1.55 | 437 |
+| GIF | CHEMBL2085 | medium | -1.87 | 399 |
+| LIPC | CHEMBL2127 | **high** | -3.68 | 378 |
+| CES1 | CHEMBL2265 | **high** | -4.46 | 350 |
+| MGAM | CHEMBL2074 | **high** | -3.76 | 313 |
+| P2RX4 | CHEMBL2104 | medium | -1.51 | 291 |
+| TNNI3 | CHEMBL5260 | **high** | -2.41 | 212 |
+| ALPI | CHEMBL5573 | **high** | -4.68 | 163 |
+| FABP1 | CHEMBL3344 | **high** | -5.85 | 128 |
+| HP | CHEMBL1861 | **high** | -2.96 | 113 |
+| CMKLR1 | CHEMBL3540 | medium | -1.95 | 103 |
+
+### Model Performance
+
+| Metric | CV (5-fold) | Held-out Test |
+|--------|-----------|---------------|
+| **ROC-AUC** | 0.960 ± 0.005 | **0.958** |
+| **PR-AUC** | 0.992 ± 0.001 | **0.990** |
+
+Excellent — near-perfect precision-recall across 19 RelB-pathway targets (Random Forest, 200 estimators, ECFP4 fingerprints, class_weight=balanced).
+
+### ★ Top Hit: Buprenorphine
+
+| | |
+|---|---|
+| **ChEMBL ID** | CHEMBL511142 |
+| **p(active)** | **0.9950** |
+| **Drug class** | Opioid partial agonist (FDA-approved) |
+
+### Top 10 Predicted Hits — FDA-Approved Compounds
+
+| Rank | Drug | p(active) | Biological Note |
+|------|------|-----------|-----------------|
+| **1** | **Buprenorphine** | **0.9950** | Opioid partial agonist; reported anti-tumor activity in ovarian cancer cells |
+| 2 | Flurbiprofen | 0.9800 | NSAID / COX inhibitor |
+| 3 | Estrone | 0.9650 | Estrogen — aromatase substrate (CYP19A1 hit) |
+| 4 | **Anastrozole** | 0.9550 | Aromatase inhibitor (FDA-approved breast cancer) |
+| 5 | **Letrozole** | 0.9550 | Aromatase inhibitor (FDA-approved breast cancer) |
+| 6 | **Exemestane** | 0.9550 | Aromatase inhibitor (FDA-approved breast cancer) |
+| 7 | Naproxen | 0.9500 | NSAID |
+| 8 | Nalmefene | 0.9500 | Opioid antagonist |
+| 9 | Naltrexone | 0.9350 | Opioid antagonist |
+| 10 | Nalmefene HCl | 0.9350 | Opioid antagonist (salt form) |
+
+### Key Biological Insight
+
+The three aromatase inhibitors (anastrozole, letrozole, exemestane) scoring in the top 6 is not random — CYP19A1 (aromatase) was the second most ligand-rich RelB-dependent target (2,991 known compounds, RelB logFC = -2.44). Aromatase/estrogen signaling and NF-κB/RelB are known to crosstalk in ovarian cancer. These drugs are already FDA-approved and could be fast-tracked for HGSOC repurposing experiments. All output files in [`data/processed/screening_hits.csv`](data/processed/screening_hits.csv).
+
 ---
 
 ## Overview
