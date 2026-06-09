@@ -1,0 +1,28 @@
+# Large binary outputs — use DVC or download via run_pipeline.py
+data/processed/features_X.npy
+data/processed/features_y.npy
+data/processed/features_meta.csv
+data/processed/fda_library.csv
+data/processed/combined_bioactivity.csv
+data/processed/models/
+data/processed/chembl_id_cache.csv
+data/processed/ligand_count_cache.csv
+data/processed/*.png
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+dist/
+build/
+.env
+venv/
+.venv/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# macOS
+.DS_Store

@@ -1,0 +1,39 @@
+targets:
+  # Paste your biomarker-discovery-pipeline ranked output here, or
+  # point notebook 01 at data/inputs/example_biomarker_targets.csv
+  example:
+    - gene_symbol: RELB
+      chembl_id: CHEMBL2094253
+      priority: high
+    - gene_symbol: BIRC5
+      chembl_id: CHEMBL1907601
+      priority: high
+    - gene_symbol: BCL2L1
+      chembl_id: CHEMBL3301361
+      priority: high
+    - gene_symbol: CCND1
+      chembl_id: CHEMBL230
+      priority: medium
+
+acquisition:
+  activity_types: ["IC50", "Ki", "Kd"]
+  assay_type: "B"                  # Binding assays only
+  max_compounds_per_target: 5000
+  pchembl_cutoff_active: 6.0       # pChEMBL >= 6 → active  (IC50 ≤ 1 µM)
+  pchembl_cutoff_inactive: 5.0     # pChEMBL <  5 → inactive (IC50 > 10 µM)
+
+features:
+  morgan_radius: 2                 # ECFP4
+  morgan_n_bits: 2048
+  use_chirality: true
+
+models:
+  type: "random_forest"            # or "gradient_boosting"
+  n_estimators: 200
+  cv_folds: 5
+  test_size: 0.2
+  random_state: 42
+
+screening:
+  library: "fda_approved"          # max_phase=4 from ChEMBL
+  top_n_hits: 50
