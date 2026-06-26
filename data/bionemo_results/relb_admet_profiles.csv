@@ -1,0 +1,4 @@
+name,smiles,pic50,delta_pic50,mw,logp,hba,hbd,tpsa,rotatable_bonds,aromatic_rings,heavy_atoms,fsp3,qed,lipinski_violations,lipinski_pass,veber_pass,ghose_pass,egan_pass,muegge_pass,gi_absorption,bbb_permeant,pgp_substrate,log_s_esol,solubility_class,pains_pass,sa_score,leadlike,pains_alerts,brenk_alerts
+Analog #1 — Dimethylphenyl oxadiazole-THF,Cc1ccc(C(=O)Nc2noc([C@@H]3CCCO3)n2)c(C)c1,7.08,0.15,287.3,2.79,5,1,77.2,3,2,21,0.4,0.939,0,True,True,True,True,True,High,Yes,Unlikely,-4.66,Poorly soluble,True,2.86,True,,
+Analog #2 — Methoxyquinoline aminopiperidine,COc1ccc2cc(NC[C@H]3CCCCO3)cnc2c1,6.99,0.06,272.3,3.22,4,1,43.4,4,2,20,0.438,0.928,0,True,True,True,True,True,High,Yes,Unlikely,-4.78,Poorly soluble,True,2.57,True,,
+Parent — Pyridine-piperazine amide,Cc1cc(C(=O)N2CCN(c3ccccc3)CC2)ccn1,6.93,0.0,281.4,2.35,3,0,36.4,2,2,21,0.294,0.848,0,True,True,True,True,True,High,Yes,Unlikely,-4.41,Poorly soluble,True,1.79,True,,

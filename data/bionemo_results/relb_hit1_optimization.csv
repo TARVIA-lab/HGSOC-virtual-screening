@@ -1,0 +1,8 @@
+rank,smiles,pic50,delta_pic50,probability_binding,docking_confidence,qed_score,strategy
+1,Cc1ccc(C(=O)Nc2noc([C@@H]3CCCO3)n2)c(C)c1,7.076,0.146,0.3164,-1.5028,0.939,De novo drug-like (batch 2)
+2,COc1ccc2cc(NC[C@H]3CCCCO3)cnc2c1,6.985,0.055,0.4238,-1.2579,0.928,De novo drug-like (batch 2)
+3,CC1(C)CC(CNC(=O)c2cnc3ccccc3n2)C1,6.873,-0.057,0.2793,-1.148,0.932,De novo drug-like (batch 2)
+4,Cc1cc(F)ccc1NC(=O)c1ccccc1S(C)(=O)=O,6.586,-0.344,0.332,-1.4527,0.948,De novo drug-like (batch 1)
+5,Cc1cc(C(=O)N2CCN(Cc3ccccc3)CC2)c(C)[nH]1,6.479,-0.451,0.332,-1.3586,0.946,De novo (batch 4)
+6,O=C(NCc1ccccc1F)N1CCN(c2ccc(F)cc2)CC1,6.404,-0.526,0.1475,-1.5671,0.938,De novo (batch 4)
+7,CCNC(=O)N1CCN(c2ccc(N3CCCCC3)cc2)CC1,6.319,-0.611,0.4609,-1.2089,0.931,Pyridine-amide + varied amine
